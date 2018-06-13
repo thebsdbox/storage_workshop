@@ -29,6 +29,8 @@ In this lab we'll look at the types of storage options that are available and ho
 
 ## Understanding the Play With Docker Interface
 
+# `http://dockr.ly/hol18-linux`
+
 ![](./images/pwd_screen.png)
 
 This workshop is only available to people in a pre-arranged workshop. That may happen through a [Docker Meetup](https://events.docker.com/chapters/), a conference workshop that is being led by someone who has made these arrangements, or special arrangements between Docker and your company. The workshop leader will provide you with the URL to a workshop environment that includes [Docker Enterprise Edition](https://www.docker.com/enterprise-edition). The environment will be based on [Play with Docker](https://labs.play-with-docker.com/).
@@ -162,7 +164,7 @@ Start up the utility with the command `screen` and you'll be presented with a sp
 Start a new container in each of the sessions with the following command:
 
 ```
-docker run –it --rm –v dockercon:/dockercon busybox
+docker run -it --rm -v dockercon:/dockercon busybox
 ```
 
 The above command will run the `busybox` container and map in the Docker volume `busybox` to the path `/dockercon` inside the container.
@@ -222,7 +224,7 @@ docker volume inspect nfs
 Start a new container in each of two **worker** nodes with the following command:
 
 ```
-docker run –it --rm –v nfs:/dockercon busybox
+docker run -it --rm -v nfs:/dockercon busybox
 ```
 
 The above command will run the `busybox` container and map in the Docker volume `nfs` to the path `/dockercon` inside the container.
@@ -393,7 +395,7 @@ On one of the nodes find the swarm created volume with the `docker volume ls` co
 
 Run a new container and map the shared volume
 ```
-docker run –it --rm –v <swarm_volume>:/web busybox
+docker run -it --rm -v <swarm_volume>:/web busybox
 ```
 
 Create a new `index.html` with the following command
