@@ -229,6 +229,7 @@ docker run -it --rm -v nfs:/dockercon busybox
 
 The above command will run the `busybox` container and map in the Docker volume `nfs` to the path `/dockercon` inside the container.
 
+
 ### <a name="task 3.3"></a>Task 2.3: Create shared data
 
 In **Container 1** run the following command:
@@ -398,10 +399,12 @@ Run a new container and map the shared volume
 docker run -it --rm -v <swarm_volume>:/web busybox
 ```
 
+
 Create a new `index.html` in the `/web` shared volume with the following command
 
 ```
 cd /web
+
 echo "
 <head>
 <body>
