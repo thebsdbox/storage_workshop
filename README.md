@@ -230,7 +230,7 @@ docker run -it --rm -v nfs:/dockercon busybox
 The above command will run the `busybox` container and map in the Docker volume `nfs` to the path `/dockercon` inside the container.
 
 
-### <a name="task 3.3"></a>Task 2.3: Create shared data
+### <a name="task 3.3"></a>Task 3.3: Create shared data
 
 In **Container 1** run the following command:
 
@@ -247,7 +247,7 @@ touch sample_data
 
 You will see these new files be reflected in the output of the first container.
 
-### <a name="task 3.4"></a>Task 2.4: Local Volume cleanup
+### <a name="task 3.4"></a>Task 3.4: Local Volume cleanup
 
 
 Once completing the task exit both of the containers and finally remove the Docker volume with the command `docker volume rm nfs`.
@@ -281,6 +281,10 @@ Click on `Admin` > `Admin Settings` in the left menu sidebar.
 Click on `Scheduler` and under `Container Scheduling` uncheck the first option `Allow administrators to deploy containers on UCP managers or nodes running DTR`
 
 ## <a name="task4.2"></a>Task 4.2: Configuring Containers for Deployment
+
+** THIS IS ONLY FOR INFORMATION DON'T IMPLEMENT **
+
+**Skip** to 4.3 for an actual deployment.
 
 We'll use the Redis container as example on how to configure containers for production and go through the options.
 
