@@ -229,7 +229,7 @@ docker run -it --rm -v nfs:/dockercon busybox
 
 The above command will run the `busybox` container and map in the Docker volume `nfs` to the path `/dockercon` inside the container.
 
-### <a name="task 3.3"></a>Task 2.3: Create shared data
+### <a name="task 3.3"></a>Task 3.3: Create shared data
 
 In **Container 1** run the following command:
 
@@ -246,7 +246,7 @@ touch sample_data
 
 You will see these new files be reflected in the output of the first container.
 
-### <a name="task 3.4"></a>Task 2.4: Local Volume cleanup
+### <a name="task 3.4"></a>Task 3.4: Local Volume cleanup
 
 
 Once completing the task exit both of the containers and finally remove the Docker volume with the command `docker volume rm nfs`.
