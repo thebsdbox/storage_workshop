@@ -398,9 +398,10 @@ Run a new container and map the shared volume
 docker run -it --rm -v <swarm_volume>:/web busybox
 ```
 
-Create a new `index.html` with the following command
+Create a new `index.html` in the `/web` shared volume with the following command
 
 ```
+cd /web
 echo "
 <head>
 <body>
