@@ -29,7 +29,7 @@ In this lab we'll look at the types of storage options that are available and ho
 
 ## Understanding the Play With Docker Interface
 
-# `http://dockr.ly/hol18-linux`
+# `https://dockr.ly/dc18workshop`
 
 ![](./images/pwd_screen.png)
 
