@@ -24,12 +24,28 @@ In this lab we'll look at the types of storage options that are available and ho
 >   * [Task 2.1: Create a local Docker Volume](#task2.1)
 >   * [Task 2.2: Create multiple containers that use the same volume](#task2.2)
 >   * [Task 2.3: Create shared data](#task2.3)
-
+>   * [Task 2.4: Local Volume cleanup](#task2.4)
+> * [Task 3: Shared Storage across hosts](#task3)
+>   * [Task 3.1: Create a shared Docker Volume](#task3.1)
+>   * [Task 3.2: Create multiple containers that share the same volume](#task3.2)
+>   * [Task 3.3: Create shared data](#task3.3)
+>   * [Task 3.4: Shared Volume cleanup](#task3.4)
+> * [Task 4: Storage Orchestration with Swarm](#task4)
+>   * [Task 4.1: Configure Workloads to Only Run on Workers](#task4.1)
+>   * [Task 4.2: Configuring Containers for Deployment](#task4.2)
+>   * [Task 4.3: Deploying a service that uses shared storage](#task4.3)
+>   * [Task 4.4: Create shared web-based content](#task4.4)
+>   * [Task 4.5: Visualise the Deployment](#task4.5)
+> * [Task 5: Storage Orchestration with Kubernetes](#task5)
+>   * [Task 5.1: Configure Kubernetes access from the Terminal](#task5.1)
+>   * [Task 5.2: Deploy Application in Kubernetes](#task5.2)
+>   * [Task 5.3: Check out the Deployment on the Command Line](#task5.3)
+> **Conclusion**
 
 
 ## Understanding the Play With Docker Interface
 
-# `https://dockr.ly/dc18workshop`
+# `http://ee-labs.play-with-docker.com`
 
 ![](./images/pwd_screen.png)
 
@@ -247,7 +263,7 @@ touch sample_data
 
 You will see these new files be reflected in the output of the first container.
 
-### <a name="task 3.4"></a>Task 3.4: Local Volume cleanup
+### <a name="task 3.4"></a>Task 3.4: Shared Volume cleanup
 
 
 Once completing the task exit both of the containers and finally remove the Docker volume with the command `docker volume rm nfs`.
@@ -394,7 +410,7 @@ volumes:
 
 This will create four nginx replicas that will all attempt to read web assets from the path `/usr/share/nginx/html` however as this is empty we should be returned a `403` error.
 
-## <a name="task4.4"></a>Task 4.4: Create a shared web asset
+## <a name="task4.4"></a>Task 4.4: Create shared web-based content
 
 On one of the nodes find the swarm created volume with the `docker volume ls` command.
 
@@ -434,11 +450,11 @@ In your browser, go to http://<$UCP_HOST>:3000 to see the containers and how the
 
 ![](images/visualizer.png)
 
-## <a name="task5"></a>Task 5: Deploying in Kubernetes
+## <a name="task5"></a>Task 5: Storage Orchestration with Kubernetes
 
 Docker EE gives you the choice of which orchestrator that you want to use. The same application that you deployed in Docker Swarm can be deployed in Kubernetes using a Docker Compose file or with Kubernetes manifests.
 
-### <a name="task5.1"></a>Task 5.1: Configure Terminal
+### <a name="task5.1"></a>Task 5.1: Configure Kubernetes access from the Terminal
 
 Kubernetes is an API and to connect to the API using the command line we will need to configure the terminal. This is done with a client bundle which contains the certificates to authenticate against the Kubernetes API.
 
