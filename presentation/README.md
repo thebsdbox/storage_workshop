@@ -92,7 +92,7 @@ spec:
 
 The following YAML spec will attempt to claim some storage that matches it’s requirements, luckily that is exactly what we provided in the previous step.
 
-**Also** note the `selectors` linking the volume-type label to the previous persistent volume, without this a `PVC` will select any `PV` that is available and matches the request requirements.
+**Also** note the `selector` linking the volume-type label to the previous persistent volume, without this a `PVC` will select any `PV` that is available and matches the request requirements.
 
 ```
 apiVersion: v1
@@ -105,9 +105,9 @@ spec:
   resources:
      requests:
        storage: 1Gi
-  selectors:
+  selector:
     matchLabels:
-      volume-type: “nfs”  
+      volume-type: "nfs" 
 ```
 
 #### Define our Replicaset
