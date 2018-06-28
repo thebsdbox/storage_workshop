@@ -73,7 +73,9 @@ We announce our persistent volume to the Kubernetes cluster with the following Y
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs-pv 
+  name: nfs-pv
+  labels: 
+    volume-type: nfs
 spec:
   capacity:
     storage: 10Gi 
@@ -90,6 +92,8 @@ spec:
 
 The following YAML spec will attempt to claim some storage that matches it’s requirements, luckily that is exactly what we provided in the previous step.
 
+**Also** note the `selectors` linking the volume-type label to the previous persistent volume, without this a `PVC` will select any `PV` that is available and matches the request requirements.
+
 ```
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -100,7 +104,10 @@ spec:
   - ReadWriteMany      
   resources:
      requests:
-       storage: 1Gi    
+       storage: 1Gi
+  selectors:
+    matchLabels:
+      volume-type: “nfs”  
 ```
 
 #### Define our Replicaset
