@@ -73,7 +73,9 @@ We announce our persistent volume to the Kubernetes cluster with the following Y
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs-pv 
+  name: nfs-pv
+  labels: 
+    volume-type: nfs
 spec:
   capacity:
     storage: 10Gi 
@@ -100,7 +102,10 @@ spec:
   - ReadWriteMany      
   resources:
      requests:
-       storage: 1Gi    
+       storage: 1Gi
+  selectors:
+    matchLabels:
+      volume-type: “nfs”  
 ```
 
 #### Define our Replicaset
